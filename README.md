@@ -8,7 +8,7 @@ Based on the research from "Graph of Thoughts: Solving Elaborate Problems with L
 
 - **Reasoning Framework Provider**: Provides structured guidance for Chain-of-Thought, Tree-of-Thoughts, Graph-of-Thoughts, and Iterative Refinement patterns
 - **Meta-Cognitive Guidance**: Built-in quality assessment and improvement recommendations
-- **Pattern Templates**: Ready-to-use templates for different reasoning approaches  
+- **Pattern Templates**: Ready-to-use templates for different reasoning approaches
 - **Comparative Analysis**: Framework for comparing different reasoning methodologies
 - **MCP Integration**: Seamless integration with Claude Desktop as a reasoning assistant
 - **Zero Circular Dependencies**: Clean architecture that helps Claude reason better rather than attempting reasoning itself
@@ -18,7 +18,7 @@ Based on the research from "Graph of Thoughts: Solving Elaborate Problems with L
 ### Installation
 ```bash
 # Navigate to the project directory
-cd /home/ty/Repositories/ai_workspace/graph-of-thoughts-mcp
+cd /graph-of-thoughts-mcp
 
 # Create and activate virtual environment
 uv venv --python 3.12 --seed
@@ -39,15 +39,10 @@ Add the configuration from `example_mcp_config.json` to your Claude Desktop conf
       "command": "uv",
       "args": [
         "--directory",
-        "/home/ty/Repositories/ai_workspace/graph-of-thoughts-mcp",
+        "/your-path-to/graph-of-thoughts-mcp",
         "run",
-        "python",
-        "-m",
-        "graph_of_thoughts_mcp.server"
-      ],
-      "env": {
-        "PYTHONPATH": "/home/ty/Repositories/ai_workspace/graph-of-thoughts-mcp"
-      }
+        "server.py"
+      ]
     }
   }
 }
@@ -82,7 +77,7 @@ Create and test custom reasoning patterns for specific problem types.
 - `operations_sequence`: Sequence of operations (`["generate", "score", "aggregate", "select"]`)
 - `description`: Optional description
 
-### `analyze_reasoning_quality` 
+### `analyze_reasoning_quality`
 Analyze the quality and effectiveness of reasoning results.
 
 **Parameters:**
@@ -106,7 +101,7 @@ Compare different reasoning approaches on the same problem.
 - **Strengths**: Fast, clear reasoning path
 - **Use Case**: Simple analytical problems
 
-### Tree of Thoughts  
+### Tree of Thoughts
 - **Best for**: Problems requiring exploration of multiple approaches
 - **Operations**: Generate(3) → Score → Select(2) → Generate(2) → Score → Select(1)
 - **Strengths**: Explores alternatives while maintaining quality
@@ -114,7 +109,7 @@ Compare different reasoning approaches on the same problem.
 
 ### Graph of Thoughts
 - **Best for**: Complex problems requiring synthesis of multiple perspectives
-- **Operations**: Generate(4) → Score → Select(3) → Aggregate → Generate(2) → Score → Select(1)  
+- **Operations**: Generate(4) → Score → Select(3) → Aggregate → Generate(2) → Score → Select(1)
 - **Strengths**: Rich interaction between ideas, comprehensive exploration
 - **Use Case**: Complex strategic planning, research synthesis
 
@@ -167,7 +162,7 @@ The key insight is that reasoning benefits from both structured exploration and 
 
 The system follows transparent error handling principles:
 - All errors are properly displayed with clear, actionable messages
-- No fallback systems that mask underlying issues  
+- No fallback systems that mask underlying issues
 - Comprehensive logging to stderr for MCP compatibility
 - Graceful degradation with informative error responses
 
