@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "graph-of-thoughts": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/ty/Repositories/ai_workspace/graph-of-thoughts-mcp/graph_of_thoughts_mcp",
+        "run",
+        "server.py"
+      ]
+    }
+  }
+}

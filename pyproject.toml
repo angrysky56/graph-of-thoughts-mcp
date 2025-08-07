@@ -1,0 +1,78 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "graph-of-thoughts-mcp"
+dynamic = ["version"]
+description = "MCP server implementing Graph of Thoughts reasoning methodology"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = ["mcp", "graph-of-thoughts", "reasoning", "ai", "llm"]
+authors = [
+  {name = "AI Workspace"},
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "mcp[cli]>=1.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Documentation = "https://github.com/angrysky56/graph-of-thoughts-mcp#readme"
+Issues = "https://github.com/angrysky56/graph-of-thoughts-mcp/issues"
+Source = "https://github.com/angrysky56/graph-of-thoughts-mcp"
+
+[project.scripts]
+graph-of-thoughts-mcp = "graph_of_thoughts_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["graph_of_thoughts_mcp"]
+
+[tool.hatch.version]
+path = "graph_of_thoughts_mcp/__about__.py"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
