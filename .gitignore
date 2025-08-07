@@ -176,6 +176,7 @@ Thumbs.db
 
 # UV specific
 .uv-cache/
+uv.lock
 
 # MCP Server specific
 *.log
