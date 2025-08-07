@@ -14,19 +14,7 @@ Based on the research from "Graph of Thoughts: Solving Elaborate Problems with L
 - **Zero Circular Dependencies**: Clean architecture that helps Claude reason better rather than attempting reasoning itself
 
 ## 🚀 Quick Start
-
-### Installation
-```bash
-# Navigate to the project directory
-cd /graph-of-thoughts-mcp
-
-# Create and activate virtual environment
-uv venv --python 3.12 --seed
-source .venv/bin/activate
-
-# Install dependencies
-uv sync
-```
+Just add the adapted config to your client:
 
 ### Claude Desktop Configuration
 
@@ -172,6 +160,19 @@ The system follows transparent error handling principles:
 - Graph-of-Thoughts patterns are computationally intensive but provide superior results for complex problems
 - Use Chain-of-Thought for simple problems requiring fast responses
 - Quality scoring uses LLM evaluation for accuracy but can be customized with scoring functions
+
+### Manual Installation
+```bash
+# Navigate to the project directory
+cd /graph-of-thoughts-mcp
+
+# Create and activate virtual environment
+uv venv --python 3.12 --seed
+source .venv/bin/activate
+
+# Install dependencies
+uv sync
+```
 
 ## 🤝 Contributing
 
