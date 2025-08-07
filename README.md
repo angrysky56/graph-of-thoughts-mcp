@@ -39,7 +39,7 @@ Add the configuration from `example_mcp_config.json` to your Claude Desktop conf
       "command": "uv",
       "args": [
         "--directory",
-        "/your-path-to/graph-of-thoughts-mcp",
+        "/your-path-to/graph-of-thoughts-mcp/graph_of_thoughts_mcp",
         "run",
         "server.py"
       ]
